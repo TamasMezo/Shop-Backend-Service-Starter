@@ -1,17 +1,14 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
 app.use(morgan("dev"));
-
-/* app.use((req, res, next) => {
-  res.status(200).json({
-    message: "It works!"
-  });
-}); */
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Routes
 app.use("/products", productRoutes);
