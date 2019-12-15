@@ -8,8 +8,34 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  res.status(200).json({
+  res.status(201).json({
     message: "Handeling post requests to products"
+  });
+});
+
+router.get("/:productId", (req, res, next) => {
+  const id = req.params.productId;
+  if (id === "special") {
+    res.status(200).json({
+      message: "Spec. product get req. works",
+      id: id
+    });
+  } else {
+    res.status(200).json({
+      message: "you passed an id"
+    });
+  }
+});
+
+router.patch("/:productId", (req, res, next) => {
+  res.status(200).json({
+    message: "updated product"
+  });
+});
+
+router.delete("/:productId", (req, res, next) => {
+  res.status(200).json({
+    message: "deleted product"
   });
 });
 
