@@ -8,11 +8,12 @@ const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
 mongoose.connect(
-  "mongodb+srv://dev-user:" +
+  "mongodb+srv://dev_user:" +
     process.env.MONGO_ATLAS_PW +
     "@node-shop-lyam9.mongodb.net/test?retryWrites=true&w=majority",
   {
-    useMongoClient: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   }
 );
 
