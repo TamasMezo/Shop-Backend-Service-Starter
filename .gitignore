@@ -3,3 +3,7 @@
 nodemon.json
 
 /.vscode/
+
+/uploads/
+
+package-lock.json
