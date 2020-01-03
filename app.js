@@ -17,6 +17,7 @@ mongoose.connect(
     useUnifiedTopology: true
   }
 );
+mongoose.set("useCreateIndex", true);
 
 app.use(morgan("dev"));
 app.use("/uploads", express.static("uploads"));
